@@ -1,0 +1,13 @@
+#!/bin/bash
+## qutebrowser
+##
+## Mac Radigan
+##
+## Wrapper script, as per instructions in README.asciidoc
+
+  d=${0%/*}; f=${0##*/}; n=${f%.*}; e=${f##*.}
+  r=`readlink -f $d`
+
+  $r/../.venv/bin/python3 -m qutebrowser "$@" 1>/dev/null 2>/dev/null &
+
+## *EOF*
